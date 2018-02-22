@@ -15,6 +15,8 @@
 		4E8C235E203F2BC800A937FE /* senfonicoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C235D203F2BC800A937FE /* senfonicoUITests.swift */; };
 		4E8C2376203F2DC300A937FE /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C2375203F2DC300A937FE /* ServiceManager.swift */; };
 		4E8C2378203F2E0C00A937FE /* RequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C2377203F2E0C00A937FE /* RequestTarget.swift */; };
+		4E8C237A203F454100A937FE /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C2379203F454100A937FE /* Method.swift */; };
+		4E8C237C203F464A00A937FE /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C237B203F464A00A937FE /* Flickr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4E8C235F203F2BC800A937FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8C2375203F2DC300A937FE /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		4E8C2377203F2E0C00A937FE /* RequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTarget.swift; sourceTree = "<group>"; };
+		4E8C2379203F454100A937FE /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		4E8C237B203F464A00A937FE /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 			children = (
 				4E8C2375203F2DC300A937FE /* ServiceManager.swift */,
 				4E8C2377203F2E0C00A937FE /* RequestTarget.swift */,
+				4E8C2379203F454100A937FE /* Method.swift */,
+				4E8C237B203F464A00A937FE /* Flickr.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -342,7 +348,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8C237A203F454100A937FE /* Method.swift in Sources */,
 				4E8C2378203F2E0C00A937FE /* RequestTarget.swift in Sources */,
+				4E8C237C203F464A00A937FE /* Flickr.swift in Sources */,
 				4E8C233E203F2BC800A937FE /* AppDelegate.swift in Sources */,
 				4E8C2376203F2DC300A937FE /* ServiceManager.swift in Sources */,
 			);
