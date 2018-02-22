@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E8C233E203F2BC800A937FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C233D203F2BC800A937FE /* AppDelegate.swift */; };
+		4E8C2343203F2BC800A937FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C2341203F2BC800A937FE /* Main.storyboard */; };
+		4E8C2345203F2BC800A937FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C2344203F2BC800A937FE /* Assets.xcassets */; };
+		4E8C2348203F2BC800A937FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C2346203F2BC800A937FE /* LaunchScreen.storyboard */; };
+		4E8C2353203F2BC800A937FE /* senfonicoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C2352203F2BC800A937FE /* senfonicoTests.swift */; };
+		4E8C235E203F2BC800A937FE /* senfonicoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C235D203F2BC800A937FE /* senfonicoUITests.swift */; };
+		4E8C2376203F2DC300A937FE /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C2375203F2DC300A937FE /* ServiceManager.swift */; };
+		4E8C2378203F2E0C00A937FE /* RequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C2377203F2E0C00A937FE /* RequestTarget.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E8C234F203F2BC800A937FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E8C2332203F2BC800A937FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E8C2339203F2BC800A937FE;
+			remoteInfo = senfonico;
+		};
+		4E8C235A203F2BC800A937FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E8C2332203F2BC800A937FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E8C2339203F2BC800A937FE;
+			remoteInfo = senfonico;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E8C233A203F2BC800A937FE /* senfonico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = senfonico.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8C233D203F2BC800A937FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E8C2342203F2BC800A937FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E8C2344203F2BC800A937FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E8C2347203F2BC800A937FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E8C2349203F2BC800A937FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8C234E203F2BC800A937FE /* senfonicoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = senfonicoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8C2352203F2BC800A937FE /* senfonicoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senfonicoTests.swift; sourceTree = "<group>"; };
+		4E8C2354203F2BC800A937FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8C2359203F2BC800A937FE /* senfonicoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = senfonicoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8C235D203F2BC800A937FE /* senfonicoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senfonicoUITests.swift; sourceTree = "<group>"; };
+		4E8C235F203F2BC800A937FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8C2375203F2DC300A937FE /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		4E8C2377203F2E0C00A937FE /* RequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTarget.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E8C2337203F2BC800A937FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8C234B203F2BC800A937FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8C2356203F2BC800A937FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E8C2331203F2BC800A937FE = {
+			isa = PBXGroup;
+			children = (
+				4E8C233C203F2BC800A937FE /* senfonico */,
+				4E8C2351203F2BC800A937FE /* senfonicoTests */,
+				4E8C235C203F2BC800A937FE /* senfonicoUITests */,
+				4E8C233B203F2BC800A937FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E8C233B203F2BC800A937FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C233A203F2BC800A937FE /* senfonico.app */,
+				4E8C234E203F2BC800A937FE /* senfonicoTests.xctest */,
+				4E8C2359203F2BC800A937FE /* senfonicoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E8C233C203F2BC800A937FE /* senfonico */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C236F203F2BE600A937FE /* Extensions */,
+				4E8C236E203F2BE000A937FE /* Classes */,
+				4E8C236D203F2BDC00A937FE /* Views */,
+				4E8C236C203F2BD500A937FE /* ViewModels */,
+				4E8C236B203F2BCF00A937FE /* ViewControllers */,
+				4E8C233D203F2BC800A937FE /* AppDelegate.swift */,
+				4E8C2341203F2BC800A937FE /* Main.storyboard */,
+				4E8C2344203F2BC800A937FE /* Assets.xcassets */,
+				4E8C2346203F2BC800A937FE /* LaunchScreen.storyboard */,
+				4E8C2349203F2BC800A937FE /* Info.plist */,
+			);
+			path = senfonico;
+			sourceTree = "<group>";
+		};
+		4E8C2351203F2BC800A937FE /* senfonicoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C2352203F2BC800A937FE /* senfonicoTests.swift */,
+				4E8C2354203F2BC800A937FE /* Info.plist */,
+			);
+			path = senfonicoTests;
+			sourceTree = "<group>";
+		};
+		4E8C235C203F2BC800A937FE /* senfonicoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C235D203F2BC800A937FE /* senfonicoUITests.swift */,
+				4E8C235F203F2BC800A937FE /* Info.plist */,
+			);
+			path = senfonicoUITests;
+			sourceTree = "<group>";
+		};
+		4E8C236B203F2BCF00A937FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C2374203F2C3300A937FE /* Detail */,
+				4E8C2373203F2C0900A937FE /* Photos */,
+				4E8C2372203F2C0400A937FE /* Base */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4E8C236C203F2BD500A937FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4E8C236D203F2BDC00A937FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E8C236E203F2BE000A937FE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C2371203F2BFC00A937FE /* Classes */,
+				4E8C2370203F2BF200A937FE /* Service */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4E8C236F203F2BE600A937FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E8C2370203F2BF200A937FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C2375203F2DC300A937FE /* ServiceManager.swift */,
+				4E8C2377203F2E0C00A937FE /* RequestTarget.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4E8C2371203F2BFC00A937FE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4E8C2372203F2C0400A937FE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4E8C2373203F2C0900A937FE /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		4E8C2374203F2C3300A937FE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E8C2339203F2BC800A937FE /* senfonico */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E8C2362203F2BC800A937FE /* Build configuration list for PBXNativeTarget "senfonico" */;
+			buildPhases = (
+				4E8C2336203F2BC800A937FE /* Sources */,
+				4E8C2337203F2BC800A937FE /* Frameworks */,
+				4E8C2338203F2BC800A937FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = senfonico;
+			productName = senfonico;
+			productReference = 4E8C233A203F2BC800A937FE /* senfonico.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E8C234D203F2BC800A937FE /* senfonicoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E8C2365203F2BC800A937FE /* Build configuration list for PBXNativeTarget "senfonicoTests" */;
+			buildPhases = (
+				4E8C234A203F2BC800A937FE /* Sources */,
+				4E8C234B203F2BC800A937FE /* Frameworks */,
+				4E8C234C203F2BC800A937FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E8C2350203F2BC800A937FE /* PBXTargetDependency */,
+			);
+			name = senfonicoTests;
+			productName = senfonicoTests;
+			productReference = 4E8C234E203F2BC800A937FE /* senfonicoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4E8C2358203F2BC800A937FE /* senfonicoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E8C2368203F2BC800A937FE /* Build configuration list for PBXNativeTarget "senfonicoUITests" */;
+			buildPhases = (
+				4E8C2355203F2BC800A937FE /* Sources */,
+				4E8C2356203F2BC800A937FE /* Frameworks */,
+				4E8C2357203F2BC800A937FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E8C235B203F2BC800A937FE /* PBXTargetDependency */,
+			);
+			name = senfonicoUITests;
+			productName = senfonicoUITests;
+			productReference = 4E8C2359203F2BC800A937FE /* senfonicoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E8C2332203F2BC800A937FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "senfonico-interview";
+				TargetAttributes = {
+					4E8C2339203F2BC800A937FE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					4E8C234D203F2BC800A937FE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E8C2339203F2BC800A937FE;
+					};
+					4E8C2358203F2BC800A937FE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E8C2339203F2BC800A937FE;
+					};
+				};
+			};
+			buildConfigurationList = 4E8C2335203F2BC800A937FE /* Build configuration list for PBXProject "senfonico" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E8C2331203F2BC800A937FE;
+			productRefGroup = 4E8C233B203F2BC800A937FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E8C2339203F2BC800A937FE /* senfonico */,
+				4E8C234D203F2BC800A937FE /* senfonicoTests */,
+				4E8C2358203F2BC800A937FE /* senfonicoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E8C2338203F2BC800A937FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8C2348203F2BC800A937FE /* LaunchScreen.storyboard in Resources */,
+				4E8C2345203F2BC800A937FE /* Assets.xcassets in Resources */,
+				4E8C2343203F2BC800A937FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8C234C203F2BC800A937FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8C2357203F2BC800A937FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E8C2336203F2BC800A937FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8C2378203F2E0C00A937FE /* RequestTarget.swift in Sources */,
+				4E8C233E203F2BC800A937FE /* AppDelegate.swift in Sources */,
+				4E8C2376203F2DC300A937FE /* ServiceManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8C234A203F2BC800A937FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8C2353203F2BC800A937FE /* senfonicoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8C2355203F2BC800A937FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8C235E203F2BC800A937FE /* senfonicoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E8C2350203F2BC800A937FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E8C2339203F2BC800A937FE /* senfonico */;
+			targetProxy = 4E8C234F203F2BC800A937FE /* PBXContainerItemProxy */;
+		};
+		4E8C235B203F2BC800A937FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E8C2339203F2BC800A937FE /* senfonico */;
+			targetProxy = 4E8C235A203F2BC800A937FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E8C2341203F2BC800A937FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E8C2342203F2BC800A937FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E8C2346203F2BC800A937FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E8C2347203F2BC800A937FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E8C2360203F2BC800A937FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E8C2361203F2BC800A937FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E8C2363203F2BC800A937FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AGEQK67NW9;
+				INFOPLIST_FILE = senfonico/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interview.senfonico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4E8C2364203F2BC800A937FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AGEQK67NW9;
+				INFOPLIST_FILE = senfonico/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interview.senfonico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4E8C2366203F2BC800A937FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AGEQK67NW9;
+				INFOPLIST_FILE = senfonicoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interview.senfonicoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/senfonico.app/senfonico";
+			};
+			name = Debug;
+		};
+		4E8C2367203F2BC800A937FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AGEQK67NW9;
+				INFOPLIST_FILE = senfonicoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interview.senfonicoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/senfonico.app/senfonico";
+			};
+			name = Release;
+		};
+		4E8C2369203F2BC800A937FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AGEQK67NW9;
+				INFOPLIST_FILE = senfonicoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interview.senfonicoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = senfonico;
+			};
+			name = Debug;
+		};
+		4E8C236A203F2BC800A937FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AGEQK67NW9;
+				INFOPLIST_FILE = senfonicoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interview.senfonicoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = senfonico;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E8C2335203F2BC800A937FE /* Build configuration list for PBXProject "senfonico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E8C2360203F2BC800A937FE /* Debug */,
+				4E8C2361203F2BC800A937FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E8C2362203F2BC800A937FE /* Build configuration list for PBXNativeTarget "senfonico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E8C2363203F2BC800A937FE /* Debug */,
+				4E8C2364203F2BC800A937FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E8C2365203F2BC800A937FE /* Build configuration list for PBXNativeTarget "senfonicoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E8C2366203F2BC800A937FE /* Debug */,
+				4E8C2367203F2BC800A937FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E8C2368203F2BC800A937FE /* Build configuration list for PBXNativeTarget "senfonicoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E8C2369203F2BC800A937FE /* Debug */,
+				4E8C236A203F2BC800A937FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E8C2332203F2BC800A937FE /* Project object */;
+}
