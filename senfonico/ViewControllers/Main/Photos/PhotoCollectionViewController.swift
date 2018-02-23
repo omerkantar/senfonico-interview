@@ -24,7 +24,7 @@ class PhotoCollectionViewController: UIViewController {
 
     // MARK: - Build
     func build() {
-        collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 5.0, 5.0)
+        collectionView.contentInset = UIEdgeInsetsMake(30.0, 5.0, 5.0, 5.0)
         collectionView.register(cellType: .photo)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -59,13 +59,21 @@ extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
         return .zero
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         guard cellSize == .zero else {
             return cellSize
         }
         
-        let width: CGFloat = (collectionView.bounds.width - collectionView.contentInset.left - collectionView.contentInset.right) / 3.0
+        let width: CGFloat = (collectionView.bounds.width - collectionView.contentInset.left - collectionView.contentInset.right - (2.0 * 2.0)) / 3.0
         cellSize = CGSize(width: width, height: width)
         return cellSize
     }

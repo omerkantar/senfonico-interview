@@ -41,6 +41,8 @@
 		4E8C23B720407BBF00A937FE /* PhotoCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23B620407BBF00A937FE /* PhotoCollectionViewController.xib */; };
 		4E8C23B920407C0700A937FE /* VideoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23B820407C0700A937FE /* VideoTableViewController.xib */; };
 		4E8C23BC20407EC800A937FE /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23BB20407EC800A937FE /* MainManager.swift */; };
+		4E8C23C020408B6C00A937FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23BE20408B6C00A937FE /* LoadingView.swift */; };
+		4E8C23C120408B6C00A937FE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23BF20408B6C00A937FE /* LoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		4E8C23B620407BBF00A937FE /* PhotoCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewController.xib; sourceTree = "<group>"; };
 		4E8C23B820407C0700A937FE /* VideoTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewController.xib; sourceTree = "<group>"; };
 		4E8C23BB20407EC800A937FE /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
+		4E8C23BE20408B6C00A937FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4E8C23BF20408B6C00A937FE /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 		4E8C236D203F2BDC00A937FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C23BD20408B4B00A937FE /* LoadingView */,
 				4E8C238920401AB900A937FE /* Cells */,
 			);
 			path = Views;
@@ -398,6 +403,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		4E8C23BD20408B4B00A937FE /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C23BE20408B6C00A937FE /* LoadingView.swift */,
+				4E8C23BF20408B6C00A937FE /* LoadingView.xib */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E8C2348203F2BC800A937FE /* LaunchScreen.storyboard in Resources */,
+				4E8C23C120408B6C00A937FE /* LoadingView.xib in Resources */,
 				4E8C238F20401ADD00A937FE /* PhotoCollectionViewCell.xib in Resources */,
 				4E8C2345203F2BC800A937FE /* Assets.xcassets in Resources */,
 				4E8C23B920407C0700A937FE /* VideoTableViewController.xib in Resources */,
@@ -547,6 +562,7 @@
 				4E8C23B320405EEC00A937FE /* PhotoModel.swift in Sources */,
 				4E8C23A320403B7A00A937FE /* MainViewController.swift in Sources */,
 				4E8C239F2040260100A937FE /* VideoTableViewController.swift in Sources */,
+				4E8C23C020408B6C00A937FE /* LoadingView.swift in Sources */,
 				4E8C23AB20403D7B00A937FE /* Cell+Extensions.swift in Sources */,
 				4E8C23AD20403DCE00A937FE /* BaseCellViewModel.swift in Sources */,
 				4E8C237C203F464A00A937FE /* Flickr.swift in Sources */,
