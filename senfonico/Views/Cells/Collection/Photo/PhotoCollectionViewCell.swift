@@ -17,7 +17,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func build(viewModel: BaseCellViewModel) {
+    override func build(viewModel: BaseCellViewModel) {
         
     }
 

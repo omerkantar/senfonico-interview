@@ -24,6 +24,6 @@ class ResponseModel: BaseModel {
     }
     override func mapping(json: [String : Any]) {
         self.data = json["data"]
-        self.stat = json["stat"]
+        self.stat = json["stat"] as? String
     }
 }

@@ -19,6 +19,12 @@ extension UITableView {
         self.register(UINib(nibName: cellType.nibName, bundle: nil), forCellReuseIdentifier: cellType.cellIdentifier)
     }
     
+    
+    func dequeue(cellType: UITableView.CellType, indexPath: NSIndexPath) -> CellViewDataSource {
+        
+    }
+    
+    
 }
 
 // MARK: - Cell Type

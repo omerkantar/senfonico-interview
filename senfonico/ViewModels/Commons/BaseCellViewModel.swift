@@ -8,4 +8,7 @@
 
 import UIKit
 
-class BaseCellViewModel { }
+class BaseCellViewModel: NSObject {
+    
+
+}
