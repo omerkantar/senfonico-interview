@@ -12,7 +12,7 @@ import UIKit
 
 fileprivate let kJSONPlaceholder = "https://jsonplaceholder.typicode.com"
 
-enum RequestTarget {
+enum RequestTarget  {
     case coffee
     case posts
     case comments(postId: Int)
@@ -21,6 +21,33 @@ enum RequestTarget {
 }
 
 
+extension RequestTarget: APITarget {
+    var method: Method {
+        return .get
+    }
+    
+    var contentType: ContentType {
+        return .json
+    }
+    
+    var urlRequest: URLRequest? {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = self.method.rawValue
+        urlRequest.allHTTPHeaderFields = ["Content-Type": self.contentType.rawValue]
+        if let params = self.parameters {
+            do {
+                let data = try JSONSerialization.data(withJSONObject: params)
+                urlRequest.httpBody = data
+            } catch let error {
+                print("APITarget urlRequest error: \(error)")
+                let data = NSKeyedArchiver.archivedData(withRootObject: params)
+                urlRequest.httpBody = data
+            }
+        }
+        return urlRequest
+    }
+    
+}
 
 // MARK: - URL
 extension RequestTarget {
@@ -35,7 +62,7 @@ extension RequestTarget {
     var basePath: String {
         switch self {
         case .photos, .videos:
-            return FlickrApi.basePath.rawValue
+            return FlickrAPI.basePath.rawValue
         default:
             break
         }
@@ -55,14 +82,9 @@ extension RequestTarget {
 
 // MARK: - Method & content type
 extension RequestTarget {
-    var method: String {
-        return Method.get.rawValue
-    }
-    
     var headers: [String: String]? {
         return ["Content-Type": ContentType.json.rawValue]
     }
-    
 }
 
 // MARK: - Parameters

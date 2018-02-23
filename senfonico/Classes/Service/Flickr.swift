@@ -8,7 +8,9 @@
 
 import UIKit
 
-enum FlickrApi: String  {
+
+
+enum FlickrAPI: String  {
     case basePath = "https://api.flickr.com/services/rest/"
     case key = "0691d8a03bc63702e8fcfb586167c41d"
     case secret = "0f8b0cff74916f4b"
