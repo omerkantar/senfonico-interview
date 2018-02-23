@@ -10,12 +10,89 @@ import UIKit
 
 class MainViewController: BaseViewController {
 
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var photosButton: UIButton!
+    @IBOutlet weak var videosButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
+    
+    var activeButton: UIButton?
+    var viewModel: MainViewModel?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        build()
     }
 
+    // MARK: - Build
+    func build() {
+        photosButton.selectedDesign()
+        videosButton.noneSelectedDesign()
+        activeButton = photosButton
+        
+        viewModel = MainViewModel()
+        viewModel?.photoCollectionVC?.delegate = self
+        viewModel?.videoTableVC?.delegate = self
+        viewModel?.pageController?.pageDelegate = self
+        
+        guard let pageController = viewModel?.pageController else {
+            return
+        }
+        pageController.view.clipsToBounds = false
+        self.containerView.addSubview(pageController.view)
+        self.addChildViewController(pageController)
+        DispatchQueue.main.async {
+            pageController.view.frame = CGRect(origin: CGPoint.zero, size: self.containerView.frame.size)
+        }
+    }
 
+}
+
+// MARK: - PageViewControllerDelegate
+extension MainViewController: PageViewControllerDelegate {
+    func pageViewController(pageVC: PageViewController, didChanged currentPage: Int) {
+        
+        guard let button = activeButton else {
+            return
+        }
+       
+        switch button {
+        case photosButton:
+            if currentPage == 0 {
+                return
+            }
+            activeButton?.noneSelectedDesign()
+            videosButton.selectedDesign()
+            self.activeButton = videosButton
+            break
+        case videosButton:
+            if currentPage == 1 {
+                return
+            }
+            activeButton?.noneSelectedDesign()
+            photosButton.selectedDesign()
+            self.activeButton = photosButton
+            break
+        default:
+            break
+        }
+        
+    }
+}
+
+// MARK: - ScrollViewDelegate
+extension MainViewController: MainPageScrollViewDelegate {
+    func mainPageScrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY: CGFloat = scrollView.contentOffset.y
+        let constraint: CGFloat = CGFloat(max(0.0, 70.0-offsetY))
+        if self.headerTopConstraint.constant != constraint {
+            self.headerTopConstraint.constant = constraint
+        }
+        let topConstant: CGFloat = offsetY <= 0 ? 120.0 : 70.0
+        if self.containerTopConstraint.constant != topConstant {
+            self.containerTopConstraint.constant = topConstant
+        }
+    }
 }

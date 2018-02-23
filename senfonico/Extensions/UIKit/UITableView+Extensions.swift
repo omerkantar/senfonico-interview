@@ -11,17 +11,19 @@ import UIKit
 // MARK: - Register & Deque
 extension UITableView {
     
-    func build(rowHeight: CGFloat? = nil) {
-        
+    func build() {
+        self.tableFooterView = UIView(frame: .zero)
+        self.tableHeaderView = UIView(frame: .zero)
     }
     
     func register(cellType: UITableView.CellType) -> Void {
-        self.register(UINib(nibName: cellType.nibName, bundle: nil), forCellReuseIdentifier: cellType.cellIdentifier)
+        self.register(UINib(nibName: cellType.nibName, bundle: nil), forCellReuseIdentifier: cellType.identifier)
     }
     
     
-    func dequeue(cellType: UITableView.CellType, indexPath: NSIndexPath) -> CellViewDataSource {
-        
+    func dequeue(cellType: UITableView.CellType, indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.dequeueReusableCell(withIdentifier: cellType.identifier, for: indexPath)
+        return cell
     }
     
     
@@ -29,15 +31,12 @@ extension UITableView {
 
 // MARK: - Cell Type
 extension UITableView {
-    enum CellType {
+    enum CellType: CellTypeProtocol {
         case coffee // ☕️
-        case photo
         case video
     
-        var cellIdentifier: String {
+        var identifier: String {
             switch self {
-            case .photo:
-                return String(describing: PhotoCollectionViewCell.self)
             case .video:
                 return String(describing: VideoTableViewCell.self)
             default:
@@ -47,7 +46,7 @@ extension UITableView {
         }
         
         var nibName: String {
-            return cellIdentifier
+            return identifier
         }
     }
 }

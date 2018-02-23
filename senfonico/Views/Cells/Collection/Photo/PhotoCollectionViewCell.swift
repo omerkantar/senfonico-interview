@@ -15,6 +15,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imageView.backgroundColor = UIColor.groupTableViewBackground
     }
     
     override func build(viewModel: BaseCellViewModel) {

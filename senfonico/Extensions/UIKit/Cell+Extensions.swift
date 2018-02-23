@@ -12,6 +12,11 @@ protocol CellViewDataSource {
     func build(viewModel: BaseCellViewModel) -> Void
 }
 
+protocol CellTypeProtocol {
+    var identifier: String { get }
+    var nibName: String { get }
+}
+
 // MARK: - @objc func yaparak o func override edebiliriz 💃
 extension UITableViewCell: CellViewDataSource {
     @objc func build(viewModel: BaseCellViewModel) { }

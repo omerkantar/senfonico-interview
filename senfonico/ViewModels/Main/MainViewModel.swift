@@ -8,6 +8,21 @@
 
 import UIKit
 
+
 class MainViewModel {
 
+    var pageController: PageViewController?
+    var photoCollectionVC: PhotoCollectionViewController?
+    var videoTableVC: VideoTableViewController?
+    
+    init() {
+        self.setup()
+    }
+    
+    fileprivate func setup() {
+        pageController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        photoCollectionVC = PhotoCollectionViewController()
+        videoTableVC = VideoTableViewController()
+        pageController?.tabViewControllers = [photoCollectionVC!, videoTableVC!]
+    }
 }

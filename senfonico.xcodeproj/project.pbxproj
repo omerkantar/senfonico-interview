@@ -34,6 +34,13 @@
 		4E8C23A820403C1300A937FE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23A720403C1300A937FE /* MainViewModel.swift */; };
 		4E8C23AB20403D7B00A937FE /* Cell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23AA20403D7B00A937FE /* Cell+Extensions.swift */; };
 		4E8C23AD20403DCE00A937FE /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23AC20403DCE00A937FE /* BaseCellViewModel.swift */; };
+		4E8C23AF2040430800A937FE /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23AE2040430800A937FE /* UICollectionView+Extensions.swift */; };
+		4E8C23B120405EA000A937FE /* PhotoPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23B020405EA000A937FE /* PhotoPageModel.swift */; };
+		4E8C23B320405EEC00A937FE /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23B220405EEC00A937FE /* PhotoModel.swift */; };
+		4E8C23B52040786F00A937FE /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23B42040786F00A937FE /* UIButton+Extensions.swift */; };
+		4E8C23B720407BBF00A937FE /* PhotoCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23B620407BBF00A937FE /* PhotoCollectionViewController.xib */; };
+		4E8C23B920407C0700A937FE /* VideoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23B820407C0700A937FE /* VideoTableViewController.xib */; };
+		4E8C23BC20407EC800A937FE /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23BB20407EC800A937FE /* MainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +94,13 @@
 		4E8C23A720403C1300A937FE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4E8C23AA20403D7B00A937FE /* Cell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extensions.swift"; sourceTree = "<group>"; };
 		4E8C23AC20403DCE00A937FE /* BaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModel.swift; sourceTree = "<group>"; };
+		4E8C23AE2040430800A937FE /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		4E8C23B020405EA000A937FE /* PhotoPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageModel.swift; sourceTree = "<group>"; };
+		4E8C23B220405EEC00A937FE /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		4E8C23B42040786F00A937FE /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		4E8C23B620407BBF00A937FE /* PhotoCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewController.xib; sourceTree = "<group>"; };
+		4E8C23B820407C0700A937FE /* VideoTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewController.xib; sourceTree = "<group>"; };
+		4E8C23BB20407EC800A937FE /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +214,7 @@
 		4E8C236E203F2BE000A937FE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C23BA20407EB900A937FE /* Managers */,
 				4E8C2371203F2BFC00A937FE /* Models */,
 				4E8C2370203F2BF200A937FE /* Service */,
 			);
@@ -230,6 +245,8 @@
 		4E8C2371203F2BFC00A937FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C23B220405EEC00A937FE /* PhotoModel.swift */,
+				4E8C23B020405EA000A937FE /* PhotoPageModel.swift */,
 				4E8C237F203F67D900A937FE /* ResponseModel.swift */,
 				4E8C2381203F689300A937FE /* BaseModel.swift */,
 			);
@@ -249,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				4E8C239C204020C400A937FE /* PhotoCollectionViewController.swift */,
+				4E8C23B620407BBF00A937FE /* PhotoCollectionViewController.xib */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -264,7 +282,9 @@
 		4E8C2383203F6A6F00A937FE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C23B42040786F00A937FE /* UIButton+Extensions.swift */,
 				4E8C23AA20403D7B00A937FE /* Cell+Extensions.swift */,
+				4E8C23AE2040430800A937FE /* UICollectionView+Extensions.swift */,
 				4E8C2387204018C800A937FE /* UITableView+Extensions.swift */,
 			);
 			path = UIKit;
@@ -335,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				4E8C239E2040260100A937FE /* VideoTableViewController.swift */,
+				4E8C23B820407C0700A937FE /* VideoTableViewController.xib */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -367,6 +388,14 @@
 				4E8C23AC20403DCE00A937FE /* BaseCellViewModel.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		4E8C23BA20407EB900A937FE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4E8C23BB20407EC800A937FE /* MainManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,8 +508,10 @@
 				4E8C2348203F2BC800A937FE /* LaunchScreen.storyboard in Resources */,
 				4E8C238F20401ADD00A937FE /* PhotoCollectionViewCell.xib in Resources */,
 				4E8C2345203F2BC800A937FE /* Assets.xcassets in Resources */,
+				4E8C23B920407C0700A937FE /* VideoTableViewController.xib in Resources */,
 				4E8C239320401AF300A937FE /* VideoTableViewCell.xib in Resources */,
 				4E8C2343203F2BC800A937FE /* Main.storyboard in Resources */,
+				4E8C23B720407BBF00A937FE /* PhotoCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,24 +537,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E8C2388204018C800A937FE /* UITableView+Extensions.swift in Sources */,
+				4E8C23B52040786F00A937FE /* UIButton+Extensions.swift in Sources */,
 				4E8C238E20401ADD00A937FE /* PhotoCollectionViewCell.swift in Sources */,
 				4E8C237A203F454100A937FE /* Method.swift in Sources */,
 				4E8C239220401AF300A937FE /* VideoTableViewCell.swift in Sources */,
 				4E8C2378203F2E0C00A937FE /* RequestTarget.swift in Sources */,
 				4E8C239920401F8900A937FE /* PageController.swift in Sources */,
 				4E8C239720401F7E00A937FE /* BaseViewController.swift in Sources */,
+				4E8C23B320405EEC00A937FE /* PhotoModel.swift in Sources */,
 				4E8C23A320403B7A00A937FE /* MainViewController.swift in Sources */,
 				4E8C239F2040260100A937FE /* VideoTableViewController.swift in Sources */,
 				4E8C23AB20403D7B00A937FE /* Cell+Extensions.swift in Sources */,
 				4E8C23AD20403DCE00A937FE /* BaseCellViewModel.swift in Sources */,
 				4E8C237C203F464A00A937FE /* Flickr.swift in Sources */,
+				4E8C23B120405EA000A937FE /* PhotoPageModel.swift in Sources */,
 				4E8C233E203F2BC800A937FE /* AppDelegate.swift in Sources */,
 				4E8C239D204020C400A937FE /* PhotoCollectionViewController.swift in Sources */,
+				4E8C23AF2040430800A937FE /* UICollectionView+Extensions.swift in Sources */,
 				4E8C23A12040262800A937FE /* DetailContentViewController.swift in Sources */,
 				4E8C2380203F67D900A937FE /* ResponseModel.swift in Sources */,
 				4E8C2376203F2DC300A937FE /* ServiceManager.swift in Sources */,
 				4E8C237E203F4D8A00A937FE /* APITarget.swift in Sources */,
 				4E8C2382203F689300A937FE /* BaseModel.swift in Sources */,
+				4E8C23BC20407EC800A937FE /* MainManager.swift in Sources */,
 				4E8C23A820403C1300A937FE /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

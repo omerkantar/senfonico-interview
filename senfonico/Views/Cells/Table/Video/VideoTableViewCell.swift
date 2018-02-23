@@ -10,15 +10,21 @@ import UIKit
 
 class VideoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgView.backgroundColor = .red
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
+    override func build(viewModel: BaseCellViewModel) {
+        
+    }
 }
