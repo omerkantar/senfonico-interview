@@ -86,7 +86,7 @@ extension MainViewController: PageViewControllerDelegate {
 extension MainViewController: MainPageScrollViewDelegate {
     func mainPageScrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY: CGFloat = scrollView.contentOffset.y
-        let constraint: CGFloat = CGFloat(max(0.0, 70.0-offsetY))
+        let constraint: CGFloat = CGFloat(max(0.0, 50.0-offsetY))
         if self.headerTopConstraint.constant != constraint {
             self.headerTopConstraint.constant = constraint
         }

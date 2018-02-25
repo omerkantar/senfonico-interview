@@ -24,7 +24,7 @@ class PhotoCollectionViewController: UIViewController {
 
     // MARK: - Build
     func build() {
-        collectionView.contentInset = UIEdgeInsetsMake(30.0, 5.0, 5.0, 5.0)
+        collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 5.0, 5.0)
         collectionView.register(cellType: .photo)
         collectionView.delegate = self
         collectionView.dataSource = self

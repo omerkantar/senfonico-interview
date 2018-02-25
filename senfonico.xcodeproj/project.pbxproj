@@ -43,6 +43,7 @@
 		4E8C23BC20407EC800A937FE /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23BB20407EC800A937FE /* MainManager.swift */; };
 		4E8C23C020408B6C00A937FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23BE20408B6C00A937FE /* LoadingView.swift */; };
 		4E8C23C120408B6C00A937FE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23BF20408B6C00A937FE /* LoadingView.xib */; };
+		4EF53A0320434A4600AE9B31 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF53A0220434A4600AE9B31 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		4E8C23BB20407EC800A937FE /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
 		4E8C23BE20408B6C00A937FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4E8C23BF20408B6C00A937FE /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		4EF53A0220434A4600AE9B31 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				4E8C23AA20403D7B00A937FE /* Cell+Extensions.swift */,
 				4E8C23AE2040430800A937FE /* UICollectionView+Extensions.swift */,
 				4E8C2387204018C800A937FE /* UITableView+Extensions.swift */,
+				4EF53A0220434A4600AE9B31 /* UIImageView+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E8C2388204018C800A937FE /* UITableView+Extensions.swift in Sources */,
+				4EF53A0320434A4600AE9B31 /* UIImageView+Extensions.swift in Sources */,
 				4E8C23B52040786F00A937FE /* UIButton+Extensions.swift in Sources */,
 				4E8C238E20401ADD00A937FE /* PhotoCollectionViewCell.swift in Sources */,
 				4E8C237A203F454100A937FE /* Method.swift in Sources */,
