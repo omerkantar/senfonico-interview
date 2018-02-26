@@ -24,20 +24,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJj-st-E8f">
-                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
-                                <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BE4-ll-Rt1">
-                                <rect key="frame" x="0.0" y="70" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qL-Hs-AW1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3F7-yW-3y5">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                                 <subviews>
+                                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-Ek-zuO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rdP-bM-lj6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <blurEffect style="extraLight"/>
+                                                    </visualEffectView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O9-yC-yEv">
-                                                        <rect key="frame" x="20" y="22" width="81" height="36"/>
+                                                        <rect key="frame" x="20" y="92" width="81" height="36"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="8" maxY="2"/>
                                                         <state key="normal" title="Photos">
@@ -45,7 +55,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-kd-q8J">
-                                                        <rect key="frame" x="107" y="22" width="81" height="36"/>
+                                                        <rect key="frame" x="107" y="92" width="81" height="36"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="8" maxY="2"/>
                                                         <state key="normal" title="Videos">
@@ -53,11 +63,15 @@
                                                         </state>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="TGg-Ek-zuO" firstAttribute="top" secondItem="3F7-yW-3y5" secondAttribute="top" id="AaB-DS-2fc"/>
                                                     <constraint firstItem="bnH-kd-q8J" firstAttribute="bottom" secondItem="8O9-yC-yEv" secondAttribute="bottom" id="EfC-He-sF3"/>
+                                                    <constraint firstItem="TGg-Ek-zuO" firstAttribute="leading" secondItem="3F7-yW-3y5" secondAttribute="leading" id="MIA-Eb-bj4"/>
                                                     <constraint firstItem="8O9-yC-yEv" firstAttribute="leading" secondItem="3F7-yW-3y5" secondAttribute="leading" constant="20" id="NIC-9e-vIH"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bnH-kd-q8J" secondAttribute="trailing" constant="12" id="O9M-ej-Ry7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TGg-Ek-zuO" secondAttribute="bottom" id="SQT-kg-AMg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TGg-Ek-zuO" secondAttribute="trailing" id="VOE-W3-KhZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="8O9-yC-yEv" secondAttribute="bottom" constant="12" id="uam-z6-GWf"/>
                                                     <constraint firstItem="bnH-kd-q8J" firstAttribute="leading" secondItem="8O9-yC-yEv" secondAttribute="trailing" constant="6" id="wG5-EL-fus"/>
                                                 </constraints>
@@ -80,16 +94,16 @@
                                     <constraint firstAttribute="trailing" secondItem="3qL-Hs-AW1" secondAttribute="trailing" id="ghd-Dn-45X"/>
                                     <constraint firstItem="3F7-yW-3y5" firstAttribute="height" secondItem="BE4-ll-Rt1" secondAttribute="height" id="iO6-Kc-czS"/>
                                     <constraint firstAttribute="bottom" secondItem="3qL-Hs-AW1" secondAttribute="bottom" id="jqe-tR-vmI"/>
-                                    <constraint firstAttribute="height" constant="70" id="uNE-2F-y2K"/>
+                                    <constraint firstAttribute="height" constant="140" id="uNE-2F-y2K"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BE4-ll-Rt1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="EYX-eo-4Gv"/>
+                            <constraint firstItem="BE4-ll-Rt1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EYX-eo-4Gv"/>
                             <constraint firstItem="BE4-ll-Rt1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kha-yZ-c0J"/>
                             <constraint firstItem="SJj-st-E8f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S7v-Tt-VSj"/>
-                            <constraint firstItem="SJj-st-E8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="W4p-gx-Vl4"/>
+                            <constraint firstItem="SJj-st-E8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W4p-gx-Vl4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SJj-st-E8f" secondAttribute="bottom" id="aix-rV-1Ac"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SJj-st-E8f" secondAttribute="trailing" id="dpL-YI-W7R"/>
                             <constraint firstItem="BE4-ll-Rt1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sDR-gv-pRJ"/>
@@ -100,7 +114,7 @@
                     <connections>
                         <outlet property="containerTopConstraint" destination="W4p-gx-Vl4" id="qMY-eZ-DmI"/>
                         <outlet property="containerView" destination="SJj-st-E8f" id="aPu-uk-zoe"/>
-                        <outlet property="headerTopConstraint" destination="EYX-eo-4Gv" id="rCC-jX-Es2"/>
+                        <outlet property="headerHeightConstraint" destination="uNE-2F-y2K" id="ebD-Lg-sbr"/>
                         <outlet property="headerView" destination="BE4-ll-Rt1" id="Iwi-nO-sPT"/>
                         <outlet property="photosButton" destination="8O9-yC-yEv" id="iPX-il-mev"/>
                         <outlet property="videosButton" destination="bnH-kd-q8J" id="yCK-tP-qnw"/>
@@ -139,10 +153,20 @@
                     <view key="view" contentMode="scaleToFill" id="3dK-iy-f0R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14509624242782593" green="0.14509683847427368" blue="0.14509809017181396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="KRc-Ny-XhJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nkV-wQ-U5J"/>
+                    <navigationItem key="navigationItem" id="nkV-wQ-U5J">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="95S-il-WZE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a7Q-RT-8TJ">
+                                <rect key="frame" x="341" y="11" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="close_icon"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yk1-Sb-j8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,4 +191,7 @@
             <point key="canvasLocation" x="-204" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close_icon" width="18" height="18"/>
+    </resources>
 </document>

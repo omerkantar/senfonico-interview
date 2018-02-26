@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: BaseViewController {
 
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var photosButton: UIButton!
     @IBOutlet weak var videosButton: UIButton!
     @IBOutlet weak var containerView: UIView!
@@ -44,7 +44,7 @@ class MainViewController: BaseViewController {
         self.containerView.addSubview(pageController.view)
         self.addChildViewController(pageController)
         DispatchQueue.main.async {
-            pageController.view.frame = CGRect(origin: CGPoint.zero, size: self.containerView.frame.size)
+            pageController.view.frame = CGRect(origin: CGPoint.zero, size: self.containerView.bounds.size)
         }
     }
 
@@ -86,13 +86,13 @@ extension MainViewController: PageViewControllerDelegate {
 extension MainViewController: MainPageScrollViewDelegate {
     func mainPageScrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY: CGFloat = scrollView.contentOffset.y
-        let constraint: CGFloat = CGFloat(max(0.0, 50.0-offsetY))
-        if self.headerTopConstraint.constant != constraint {
-            self.headerTopConstraint.constant = constraint
+        let constraint: CGFloat = CGFloat(max(90.0, 140.0-offsetY))
+        if self.headerHeightConstraint.constant != constraint {
+            self.headerHeightConstraint.constant = constraint
         }
-        let topConstant: CGFloat = offsetY <= 0 ? 120.0 : 70.0
-        if self.containerTopConstraint.constant != topConstant {
-            self.containerTopConstraint.constant = topConstant
-        }
+//        let topConstant: CGFloat = offsetY <= 0 ? 120.0 : 70.0
+//        if self.containerTopConstraint.constant != topConstant {
+//            self.containerTopConstraint.constant = topConstant
+//        }
     }
 }

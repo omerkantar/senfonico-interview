@@ -19,8 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-35-fdQ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_mountain" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-35-fdQ">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
@@ -36,4 +37,7 @@
             </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="placeholder_mountain" width="33" height="20"/>
+    </resources>
 </document>

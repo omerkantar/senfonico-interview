@@ -8,8 +8,6 @@
 
 import UIKit
 
-//https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f3e60cd8981eafd1ebd610deb941b15b&tags=love&content_type=1&media=photos&format=json&nojsoncallback=1&auth_token=72157666030651698-be6cc3b08d920147&api_sig=456e27c134bc770ccf04215db3a18166
-
 fileprivate let kJSONPlaceholder = "https://jsonplaceholder.typicode.com"
 
 enum RequestTarget  {
@@ -33,7 +31,10 @@ extension RequestTarget: APITarget {
     var urlRequest: URLRequest? {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = self.method.rawValue
-        urlRequest.allHTTPHeaderFields = ["Content-Type": self.contentType.rawValue]
+        if let params = headers {
+            urlRequest.allHTTPHeaderFields = params
+        }
+        
         if let params = self.parameters {
             do {
                 let data = try JSONSerialization.data(withJSONObject: params)
@@ -62,7 +63,7 @@ extension RequestTarget {
     var basePath: String {
         switch self {
         case .photos, .videos:
-            return FlickrAPI.basePath.rawValue
+            return GettyImage.basePath.rawValue
         default:
             break
         }
@@ -73,6 +74,9 @@ extension RequestTarget {
         switch self {
         case .posts:
             return "/posts"
+        case .photos(let key, let perpage, let page):
+            let query = key ?? "cats"
+            return "/search/images?page=\(page)&page_size=\(perpage)&file_types=jpg&phrase=\(query)&sort_order=most_popular"
         default:
             break
         }
@@ -83,6 +87,13 @@ extension RequestTarget {
 // MARK: - Method & content type
 extension RequestTarget {
     var headers: [String: String]? {
+        switch self {
+        case .photos, .videos:
+            return ["Accept": "application/json",
+                    "Api-Key": GettyImage.apiKey.rawValue]
+        default:
+            break
+        }
         return ["Content-Type": ContentType.json.rawValue]
     }
 }
@@ -91,28 +102,28 @@ extension RequestTarget {
 extension RequestTarget {
     var parameters: [String: Any]? {
         switch self {
-        case .photos(let key, let perpage, let page):
-            var params = [String: Any]()
-            params["method"] = "flickr.photos.search"
-            params["media"] = "photos"
-            params["content_type"] = 1 as Any //
-            params["page"] = page as Any
-            params["per_page"] = perpage as Any
-            if let key = key {
-                params["text"] = key
-            }
-            
-            return params
+//        case .photos(let key, let perpage, let page):
+//
+//            var params = [String: Any]()
+//            params["file_types"] = "jpg" as Any
+//            params["page"] = page as Any
+//            params["page_size"] = perpage as Any
+//            params["sort_order"] = "best_match" as Any
+//            if let key = key {
+//                params["phrase"] = key
+//            }
+//            return params
         case .videos(let key, let perpage, let page):
+            
             var params = [String: Any]()
-            params["method"] = "flickr.photos.search"
-            params["media"] = "videos"
+            params["file_types"] = "jpg" as Any
             params["page"] = page as Any
-            params["per_page"] = perpage as Any
-
+            params["page_size"] = perpage as Any
+            params["sort_order"] = "best_match" as Any
             if let key = key {
-                params["text"] = key
+                params["phrase"] = key
             }
+
             return params
         default:
             break

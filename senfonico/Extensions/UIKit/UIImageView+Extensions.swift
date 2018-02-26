@@ -9,11 +9,17 @@
 import UIKit
 
 extension UIImageView {
-    func image(url: URL?, placeholder: UIImage? = nil) {
+    
+    func image(url: URL?, placeholder: UIImage? = nil, mode: UIViewContentMode? = nil) {
         guard let url = url else {
             self.image = placeholder
+            self.contentMode = .center
             return
         }
+        
+        self.image = placeholder
+        self.contentMode = .center
+        
         
         URLSession.shared.dataTask(with: url as URL, completionHandler: { (data, response, error) -> Void in
             
@@ -22,6 +28,8 @@ extension UIImageView {
                 return
             }
             DispatchQueue.main.async(execute: { () -> Void in
+                
+                self.contentMode = mode ?? UIViewContentMode.scaleAspectFill
                 let image = UIImage(data: data!)
                 self.image = image
             })

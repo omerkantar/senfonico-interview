@@ -16,7 +16,7 @@ class LoadingView: UIView {
     static func show(title: String? = nil, parentView: UIView) -> LoadingView {
         let view = Bundle.main.loadNibNamed(String(describing: LoadingView.self), owner: nil, options: nil)?.first as! LoadingView
         view.activityIndicatorView.startAnimating()
-        view.titleLabel.text = title ?? "LOADING..."
+        view.titleLabel.text = title ?? "loading..."
         parentView.addSubview(view)
         view.center = parentView.center
         return view

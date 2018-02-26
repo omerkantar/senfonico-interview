@@ -16,7 +16,7 @@ typealias NetworkFailureBlock  = (_ error: Error?, _ response: ResponseModel?) -
 
 class ServiceManager: NSObject {
 
-    static func request(target: APITarget, success: NetworkSuccessBlock?, failure: NetworkFailureBlock?) {
+    static func request(target: RequestTarget, success: NetworkSuccessBlock?, failure: NetworkFailureBlock?) {
         
         guard let urlRequest = target.urlRequest else {
             if let failure = failure {
@@ -47,13 +47,13 @@ class ServiceManager: NSObject {
             }
             
             if let object = json as? [String: Any] {
+                model.json = object
                 model.mapping(json: object)
             } else if json is Array<Any> {
                 model.object = json
             }
             
-            if model.statusCode >= 400 ||
-                model.isSuccess == false {
+            if model.statusCode >= 400 {
                 if let failure = failure {
                     failure(nil, model)
                 }

@@ -11,21 +11,39 @@ import UIKit
 class PhotosViewModel {
 
     var paginationManager = PhotosPaginationManager()
-    var lastPageModel: PhotoPageModel?
+    var cellVMs = [MediaCellViewModel]()
+    var lastPageModel: MediaPageModel?
     var canPageUp: Bool {
         if let page = lastPageModel {
-            return page.canPageUp
+            return page.resultCount > cellVMs.count
         }
-        return false
+        return true
+    }
+    
+    var isFirst: Bool {
+        return lastPageModel == nil
     }
     
     func refreshData() {
+        cellVMs.removeAll()
         paginationManager.clear()
         lastPageModel = nil
     }
     
-    func loadedData(responseModel: ResponseModel) {
-        
+    fileprivate func pageUp() {
+        paginationManager.pageUp()
+    }
+    
+    func loadedData(responseModel: ResponseModel, type: MediaPageModel.MediaType = .image) {
+        self.lastPageModel = MediaPageModel(json: responseModel.json, type: type)
+        if let list = self.lastPageModel?.medias {
+            paginationManager.allPhotos += list
+            let newCellVMs = list.map({ (model) -> MediaCellViewModel in
+                return MediaCellViewModel(photo: model)
+            })
+            self.cellVMs += newCellVMs
+            pageUp()
+        }
     }
     
 }
