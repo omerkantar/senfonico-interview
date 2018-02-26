@@ -33,5 +33,24 @@ fileprivate extension BaseViewController {
 
 // MARK: - Request
 extension BaseViewController {
-    
+    func request(target: APITarget,
+                 loadingMessage: String?,
+                 loadingView: UIView?,
+                 success: NetworkSuccessBlock?,
+                 failure: NetworkFailureBlock?) -> Void {
+        
+        
+        ServiceManager.request(target: target, success: { (model) in
+        
+            if let success = success {
+                success(model)
+            }
+        }) { (error, model) in
+            
+            
+            if let failure = failure {
+                failure(error, model)
+            }
+        }
+    }
 }

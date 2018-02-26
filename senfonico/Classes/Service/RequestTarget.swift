@@ -16,8 +16,8 @@ enum RequestTarget  {
     case coffee
     case posts
     case comments(postId: Int)
-    case photos(key: String?)
-    case videos(key: String?)
+    case photos(key: String?, perpage: Int, page: Int)
+    case videos(key: String?, perpage: Int, page: Int)
 }
 
 
@@ -90,7 +90,35 @@ extension RequestTarget {
 // MARK: - Parameters
 extension RequestTarget {
     var parameters: [String: Any]? {
-        
+        switch self {
+        case .photos(let key, let perpage, let page):
+            var params = [String: Any]()
+            params["method"] = "flickr.photos.search"
+            params["media"] = "photos"
+            params["content_type"] = 1 as Any //
+            params["page"] = page as Any
+            params["per_page"] = perpage as Any
+            if let key = key {
+                params["text"] = key
+            }
+            
+            return params
+        case .videos(let key, let perpage, let page):
+            var params = [String: Any]()
+            params["method"] = "flickr.photos.search"
+            params["media"] = "videos"
+            params["page"] = page as Any
+            params["per_page"] = perpage as Any
+
+            if let key = key {
+                params["text"] = key
+            }
+            return params
+        default:
+            break
+        }
         return nil
     }
 }
+
+

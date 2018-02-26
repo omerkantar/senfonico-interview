@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Eger external library kullanabilseydim Network layer icin Moya/Alamofire frameworkleri kullanacaktim
 //
 
-typealias NetworkSuccessBlock = (_ response: ResponseModel?) -> Void
+typealias NetworkSuccessBlock = (_ response: ResponseModel) -> Void
 typealias NetworkFailureBlock  = (_ error: Error?, _ response: ResponseModel?) -> Void
 
 class ServiceManager: NSObject {

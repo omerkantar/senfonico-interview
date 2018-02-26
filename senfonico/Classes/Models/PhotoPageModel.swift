@@ -29,9 +29,18 @@ class PhotoPageModel: BaseModel {
         
         self.photos = [PhotoModel]()
         if let list = json["photos"] as? Array<[String: Any]> {
-            for item in list {
-                self.photos?.append(PhotoModel(json: item))
+            self.photos = list.map({ (item) -> PhotoModel in
+                return PhotoModel(json: item)
+            })
+        }
+    }
+    
+    var canPageUp: Bool {
+        if let pages = pages {
+            if let count = Int(pages) {
+                return page != count
             }
         }
+        return false
     }
 }

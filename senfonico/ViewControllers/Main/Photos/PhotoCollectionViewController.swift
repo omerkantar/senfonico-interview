@@ -16,6 +16,8 @@ class PhotoCollectionViewController: UIViewController {
     
     weak var delegate: MainPageScrollViewDelegate?
     
+    var refreshControl = UIRefreshControl()
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,14 @@ class PhotoCollectionViewController: UIViewController {
 
     // MARK: - Build
     func build() {
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
         collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 5.0, 5.0)
         collectionView.register(cellType: .photo)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
 }
 
 
@@ -90,5 +95,17 @@ extension PhotoCollectionViewController {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
+    }
+}
+
+// MARK: - Network
+extension PhotoCollectionViewController {
+    func loadData() {
+        
+    }
+    
+    @objc func refreshData() {
+        
+        loadData()
     }
 }
