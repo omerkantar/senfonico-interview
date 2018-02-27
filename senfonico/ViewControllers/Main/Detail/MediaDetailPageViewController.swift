@@ -68,7 +68,7 @@ class MediaDetailPageViewController: UIViewController {
         guard let cellVMs = cellVMs else {
             return nil
         }
-        if cellVMs.count - 1 < index {
+        if cellVMs.count - 1 < index || index < 0 {
             return nil
         }
         let vm = cellVMs[index]
@@ -81,10 +81,11 @@ class MediaDetailPageViewController: UIViewController {
 
     // MARK: - Action
     @IBAction func dismissButtonTapped() {
-        if let delegate = delegate {
-            delegate.didDismissMediaDetailPageViewController(self, indexPath: self.currentIndexPath)
+        self.dismiss(animated: true) {
+            if let delegate = self.delegate {
+                delegate.didDismissMediaDetailPageViewController(self, indexPath: self.currentIndexPath)
+            }
         }
-        self.dismiss(animated: true, completion: nil)
     }
 }
 

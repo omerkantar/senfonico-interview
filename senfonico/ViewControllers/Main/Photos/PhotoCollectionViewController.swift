@@ -39,7 +39,7 @@ class PhotoCollectionViewController: BaseViewController {
     }
     
     override func didDismissMediaDetailPageViewController(_ vc: MediaDetailPageViewController, indexPath: IndexPath) {
-        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        self.collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
     }
     
 }
