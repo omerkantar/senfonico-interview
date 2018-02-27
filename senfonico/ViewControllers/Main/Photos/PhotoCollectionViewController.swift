@@ -38,6 +38,10 @@ class PhotoCollectionViewController: BaseViewController {
         loadData()
     }
     
+    override func didDismissMediaDetailPageViewController(_ vc: MediaDetailPageViewController, indexPath: IndexPath) {
+        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
 }
 
 
@@ -66,7 +70,8 @@ extension PhotoCollectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+        presentDetailContentVC(cellVMs: viewModel.cellVMs, indexPath: indexPath)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -141,7 +146,7 @@ extension PhotoCollectionViewController {
             loadingParentView = self.collectionView
         }
         
-        request(target: viewModel.paginationManager.requestTarget, loadingView: loadingParentView, bakerViewType: .bottom, success: { (model) in
+        request(target: viewModel.paginationManager!.requestTarget, loadingView: loadingParentView, bakerViewType: .bottom, success: { (model) in
             self.loadedData(model: model)
         }, failure: nil)
     }

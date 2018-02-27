@@ -105,7 +105,21 @@ extension BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func presentDetailContentVC() {
+    func presentDetailContentVC(cellVMs: [MediaCellViewModel], indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mediaDetailPageVC") as! MediaDetailPageViewController
+        
+        vc.delegate = self
+        vc.currentIndexPath = indexPath
+        vc.cellVMs = cellVMs
+        self.presentVC(vc)
+    }
+}
+
+// MARK: - MediaDetailPageDelegate
+extension BaseViewController: MediaDetailPageDelegate {
+    @objc func didDismissMediaDetailPageViewController(_ vc: MediaDetailPageViewController, indexPath: IndexPath) {
         
     }
 }

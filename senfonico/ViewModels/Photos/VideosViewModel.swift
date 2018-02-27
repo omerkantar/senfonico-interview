@@ -1,5 +1,5 @@
 //
-//  PhotosViewModel.swift
+//  VideosViewModel.swift
 //  senfonico
 //
 //  Created by omer kantar on 26.02.2018.
@@ -8,15 +8,17 @@
 
 import UIKit
 
-class PhotosViewModel: MediasViewModel {
+class VideosViewModel: MediasViewModel {
 
+    
     override init() {
         super.init()
-        self.paginationManager = PhotosPaginationManager()
+        self.paginationManager = VideosPaginationManager()
     }
     
+    
     override func mediaType() -> MediaPageModel.MediaType? {
-        return .image
+        return .video
     }
     
 }

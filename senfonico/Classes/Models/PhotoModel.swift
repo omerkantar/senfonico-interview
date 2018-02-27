@@ -38,8 +38,9 @@ class PhotoModel: BaseModel {
     }
     
     var imageURL: URL? {
-        return self.imageModels?.first?.imageURL
+        return self.imageModels?.last?.imageURL
     }
+   
 }
 
 

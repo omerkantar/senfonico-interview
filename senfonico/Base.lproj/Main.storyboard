@@ -53,6 +53,9 @@
                                                         <state key="normal" title="Photos">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="photosButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="23o-W8-huj"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-kd-q8J">
                                                         <rect key="frame" x="107" y="92" width="81" height="36"/>
@@ -61,6 +64,9 @@
                                                         <state key="normal" title="Videos">
                                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="videosButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNs-yw-zE5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,36 +130,40 @@
             </objects>
             <point key="canvasLocation" x="660" y="133.5832083958021"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GCV-0s-mpQ">
-            <objects>
-                <navigationController storyboardIdentifier="detailNC" id="As6-0B-yKB" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vIh-MG-RDt">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="miB-Ig-aQI" kind="relationship" relationship="rootViewController" id="dof-tR-DrX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbt-8T-vem" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-204" y="959"/>
-        </scene>
-        <!--Detail Content View Controller-->
+        <!--Media Detail Page View Controller-->
         <scene sceneID="HIY-yi-hHD">
             <objects>
-                <viewController id="miB-Ig-aQI" customClass="DetailContentViewController" customModule="senfonico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mediaDetailPageVC" id="miB-Ig-aQI" customClass="MediaDetailPageViewController" customModule="senfonico" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3dK-iy-f0R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZr-au-bfN">
+                                <rect key="frame" x="319" y="40" width="44" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="ejw-gO-EZl"/>
+                                    <constraint firstAttribute="height" constant="44" id="pXu-5e-bEd"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="close_icon"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped" destination="miB-Ig-aQI" eventType="touchUpInside" id="r0h-IJ-ag2"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXu-l3-LHF">
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.14509624242782593" green="0.14509683847427368" blue="0.14509809017181396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vXu-l3-LHF" firstAttribute="leading" secondItem="KRc-Ny-XhJ" secondAttribute="leading" id="1FY-4M-BNC"/>
+                            <constraint firstItem="KRc-Ny-XhJ" firstAttribute="trailing" secondItem="MZr-au-bfN" secondAttribute="trailing" constant="12" id="25Y-FA-Nh0"/>
+                            <constraint firstItem="KRc-Ny-XhJ" firstAttribute="bottom" secondItem="vXu-l3-LHF" secondAttribute="bottom" id="2Ge-qw-nYP"/>
+                            <constraint firstItem="MZr-au-bfN" firstAttribute="top" secondItem="KRc-Ny-XhJ" secondAttribute="top" constant="20" id="bl1-2N-So3"/>
+                            <constraint firstItem="vXu-l3-LHF" firstAttribute="top" secondItem="KRc-Ny-XhJ" secondAttribute="top" constant="70" id="pV4-TV-om1"/>
+                            <constraint firstItem="KRc-Ny-XhJ" firstAttribute="trailing" secondItem="vXu-l3-LHF" secondAttribute="trailing" id="qjN-yL-kPb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KRc-Ny-XhJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="nkV-wQ-U5J">
@@ -167,6 +177,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="containerView" destination="vXu-l3-LHF" id="CmZ-f2-M5h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yk1-Sb-j8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

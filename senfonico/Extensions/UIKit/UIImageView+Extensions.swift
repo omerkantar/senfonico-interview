@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    func image(url: URL?, placeholder: UIImage? = nil, mode: UIViewContentMode? = nil) {
+    func image(url: URL?, placeholder: UIImage? = nil, mode: UIViewContentMode? = nil, completion: ((_ data: Data) -> Void)? = nil) {
         guard let url = url else {
             self.image = placeholder
             self.contentMode = .center
@@ -27,6 +27,12 @@ extension UIImageView {
                 print(error ?? "error")
                 return
             }
+            
+            if let completion = completion,
+                let data = data {
+                completion(data)
+            }
+            
             DispatchQueue.main.async(execute: { () -> Void in
                 
                 self.contentMode = mode ?? UIViewContentMode.scaleAspectFill

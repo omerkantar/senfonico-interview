@@ -15,7 +15,7 @@ enum RequestTarget  {
     case posts
     case comments(postId: Int)
     case photos(key: String?, perpage: Int, page: Int)
-    case videos(key: String?, perpage: Int, page: Int)
+    case videos(perpage: Int, page: Int)
 }
 
 
@@ -77,6 +77,9 @@ extension RequestTarget {
         case .photos(let key, let perpage, let page):
             let query = key ?? "cats"
             return "/search/images?page=\(page)&page_size=\(perpage)&file_types=jpg&phrase=\(query)&sort_order=most_popular"
+        case .videos(let perpage, let page):
+            return "/search/videos?page=\(page)&page_size=\(perpage)&sort_order=most_popular"
+
         default:
             break
         }
@@ -113,18 +116,7 @@ extension RequestTarget {
 //                params["phrase"] = key
 //            }
 //            return params
-        case .videos(let key, let perpage, let page):
-            
-            var params = [String: Any]()
-            params["file_types"] = "jpg" as Any
-            params["page"] = page as Any
-            params["page_size"] = perpage as Any
-            params["sort_order"] = "best_match" as Any
-            if let key = key {
-                params["phrase"] = key
-            }
-
-            return params
+      
         default:
             break
         }

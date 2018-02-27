@@ -24,9 +24,19 @@ class MediaPageModel {
         self.resultCount = (json["result_count"] ?? -1) as! Int
         self.medias = [PhotoModel]()
         if let list = json[self.type.rawValue] as? Array<[String: Any]> {
-            self.medias = list.map({ (item) -> PhotoModel in
-                return PhotoModel(json: item)
-            })
+            switch type {
+            case .image:
+                self.medias = list.map({ (item) -> PhotoModel in
+                    return PhotoModel(json: item)
+                })
+                break
+            case .video:
+                self.medias = list.map({ (item) -> PhotoModel in
+                    return VideoModel(json: item)
+                })
+                break
+            }
+            
         }
     }
     

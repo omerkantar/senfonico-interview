@@ -11,15 +11,15 @@ import UIKit
 class PaginationManager {
     
     var allPhotos = [PhotoModel]()
-    var perpage: Int = 30
+    var perpage: Int {
+        return 30
+    }
     var text: String?
     var page: Int = 1
     
     func clear() -> Void {
-        perpage = 30
         page = 1
         allPhotos.removeAll()
-
     }
     
     func pageUp() -> Void {
@@ -39,5 +39,14 @@ class PhotosPaginationManager: PaginationManager {
     }
 }
 
-class 
+class VideosPaginationManager: PaginationManager {
+    
+    override var perpage: Int {
+        return 10
+    }
+    
+    override var requestTarget: RequestTarget {
+        return RequestTarget.videos(perpage: perpage, page: page)
+    }
+}
 

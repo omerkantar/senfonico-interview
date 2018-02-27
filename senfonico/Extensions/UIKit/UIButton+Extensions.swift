@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     func selectedDesign() {
-        self.setTitleColor(UIColor.darkGray, for: .normal)
+        self.setTitleColor(UIColor.black, for: .normal)
     }
     
     func noneSelectedDesign() {

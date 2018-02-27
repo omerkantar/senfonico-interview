@@ -47,6 +47,32 @@ class MainViewController: BaseViewController {
             pageController.view.frame = CGRect(origin: CGPoint.zero, size: self.containerView.bounds.size)
         }
     }
+    
+    @IBAction func photosButtonTapped() {
+        guard let button = activeButton else {
+            return
+        }
+        if button == photosButton {
+            return
+        }
+        activeButton?.noneSelectedDesign()
+        photosButton.selectedDesign()
+        activeButton = photosButton
+        viewModel?.pageController?.displayControllerWithIndex(0, animated: true)
+    }
+    
+    @IBAction func videosButtonTapped() {
+        guard let button = activeButton else {
+            return
+        }
+        if button == videosButton {
+            return
+        }
+        activeButton?.noneSelectedDesign()
+        videosButton.selectedDesign()
+        activeButton = videosButton
+        viewModel?.pageController?.displayControllerWithIndex(1, animated: true)
+    }
 
 }
 

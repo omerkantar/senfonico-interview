@@ -14,8 +14,14 @@ class VideoModel: PhotoModel {
     
     override func mapping(json: [String : Any]) {
         super.mapping(json: json)
-        if let obj = json["referral_destinations"] as? [String: Any] {
-            self.referralDestinations = MediaModel(json: obj)
+        if let obj = json["referral_destinations"] as? Array<[String: Any]>,
+            let first = obj.first {
+            
+            self.referralDestinations = MediaModel(json: first)
         }
+    }
+    
+    var videoURL: URL? {
+        return referralDestinations?.imageURL
     }
 }
