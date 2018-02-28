@@ -14,6 +14,8 @@ protocol MediaDetailPageDelegate: NSObjectProtocol {
 
 class MediaDetailPageViewController: UIViewController {
 
+    
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     
     var cellVMs: [MediaCellViewModel]?
@@ -31,8 +33,16 @@ class MediaDetailPageViewController: UIViewController {
         return true
     }
     
+    
     // MARK: - Build
     func build() {
+        self.view.isUserInteractionEnabled = true
+        self.containerView.isUserInteractionEnabled = true
+        
+        self.containerView.isUserInteractionEnabled = true
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(containerViewTapped))
+        self.containerView.addGestureRecognizer(tapGR)
+        
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController?.dataSource = self
         pageViewController?.delegate = self
@@ -61,6 +71,46 @@ class MediaDetailPageViewController: UIViewController {
            
         }
     }
+    
+    // MARK: - Show hide content
+    
+    func isShowingContent() -> Bool {
+        return !self.closeButton.isHidden
+    }
+    
+    func hideContent() {
+        let vc = self.pageViewController?.viewControllers?.first as? MediaDetailContentViewController
+        UIView.animate(withDuration: 0.2, animations: {
+            self.closeButton.alpha = 0.0
+            vc?.titleLabel.alpha = 0.0
+            vc?.shareButton.alpha = 0.0
+        }) { (fns) in
+            self.closeButton.isHidden = true
+            vc?.shareButton.isHidden = true
+        }
+    }
+    
+    func showContent() {
+        let vc = self.pageViewController?.viewControllers?.first as? MediaDetailContentViewController
+        let alpha: CGFloat = 1.0
+        UIView.animate(withDuration: 0.2, animations: {
+            self.closeButton.alpha = alpha
+            vc?.titleLabel.alpha = alpha
+            vc?.shareButton.alpha = alpha
+        }) { (fns) in
+            self.closeButton.isHidden = false
+            vc?.shareButton.isHidden = false
+        }
+    }
+    
+    @objc func containerViewTapped() {
+        if isShowingContent() {
+            hideContent()
+        } else {
+            showContent()
+        }
+    }
+ 
     
     
     // MARK: -
@@ -123,4 +173,14 @@ extension MediaDetailPageViewController: UIPageViewControllerDataSource, UIPageV
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         return nextViewController(viewController, isAfter: true)
     }
+}
+
+// MARK: - UIPanGestureRecognizer
+extension MediaDetailPageViewController {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        showContent()
+    }
+    
 }

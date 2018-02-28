@@ -74,6 +74,8 @@ extension RequestTarget {
         switch self {
         case .posts:
             return "/posts"
+        case .comments(let postId):
+            return "/comments?postId=\(postId)"
         case .photos(let key, let perpage, let page):
             let query = key ?? "cats"
             return "/search/images?page=\(page)&page_size=\(perpage)&file_types=jpg&phrase=\(query)&sort_order=most_popular"
@@ -104,22 +106,6 @@ extension RequestTarget {
 // MARK: - Parameters
 extension RequestTarget {
     var parameters: [String: Any]? {
-        switch self {
-//        case .photos(let key, let perpage, let page):
-//
-//            var params = [String: Any]()
-//            params["file_types"] = "jpg" as Any
-//            params["page"] = page as Any
-//            params["page_size"] = perpage as Any
-//            params["sort_order"] = "best_match" as Any
-//            if let key = key {
-//                params["phrase"] = key
-//            }
-//            return params
-      
-        default:
-            break
-        }
         return nil
     }
 }

@@ -16,6 +16,10 @@ class BaseModel {
     
     var object: Any? // array de gelebilir
     
+    init() {
+        self.json = [String: Any]()
+    }
+
     init(json: [String: Any]) {
         self.object = json
         self.json = json

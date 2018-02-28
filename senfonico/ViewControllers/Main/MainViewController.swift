@@ -13,7 +13,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var photosButton: UIButton!
-    @IBOutlet weak var videosButton: UIButton!
+    @IBOutlet weak var postsButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
     
@@ -29,10 +29,11 @@ class MainViewController: BaseViewController {
     // MARK: - Build
     func build() {
         photosButton.selectedDesign()
-        videosButton.noneSelectedDesign()
+        postsButton.noneSelectedDesign()
         activeButton = photosButton
         
         viewModel = MainViewModel()
+        viewModel?.postTableVC?.delegate = self
         viewModel?.photoCollectionVC?.delegate = self
         viewModel?.videoTableVC?.delegate = self
         viewModel?.pageController?.pageDelegate = self
@@ -65,12 +66,12 @@ class MainViewController: BaseViewController {
         guard let button = activeButton else {
             return
         }
-        if button == videosButton {
+        if button == postsButton {
             return
         }
         activeButton?.noneSelectedDesign()
-        videosButton.selectedDesign()
-        activeButton = videosButton
+        postsButton.selectedDesign()
+        activeButton = postsButton
         viewModel?.pageController?.displayControllerWithIndex(1, animated: true)
     }
 
@@ -90,10 +91,10 @@ extension MainViewController: PageViewControllerDelegate {
                 return
             }
             activeButton?.noneSelectedDesign()
-            videosButton.selectedDesign()
-            self.activeButton = videosButton
+            postsButton.selectedDesign()
+            self.activeButton = postsButton
             break
-        case videosButton:
+        case postsButton:
             if currentPage == 1 {
                 return
             }

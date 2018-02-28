@@ -14,3 +14,12 @@ extension String {
         return URL(string: self)
     }
 }
+
+
+extension String {
+    
+    var int: Int {
+        return Int(self) ?? 0
+    }
+    
+}

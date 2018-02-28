@@ -22,9 +22,70 @@ class BaseViewController: UIViewController {
         designingNavigationBar()
     }
     
-    // MARK: - Build
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        designingNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        designingNavigationBar()
+    }
+    
+    // MARK: - NavigationBar design
     func updateNavigationBarDesign() {
         designingNavigationBar()
+    }
+    
+    func isShowingNavigationBar() -> Bool {
+        return false
+    }
+    
+    func navigationBarBackgroundColor() -> UIColor? {
+        return nil
+    }
+    
+    // MARK: - Keyboard Notifications
+    func addKeyboardNotifications() {
+        // MARK: - Dealocta remove edilmektedir
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let frame = getKeyboardFrame(notification: notification) else {
+            return
+        }
+        keyboardFoundFrame(frame: frame)
+    }
+    
+    @objc func keyboardWillChangeFrame(_ notification: Notification) {
+        guard let frame = getKeyboardFrame(notification: notification) else {
+            return
+        }
+        keyboardFoundFrame(frame: frame)
+
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        
+    }
+    
+    func keyboardFoundFrame(frame: CGRect) {
+        
+    }
+    
+    func getKeyboardFrame(notification: Notification) -> CGRect? {
+        guard let userInfo = notification.userInfo, let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return nil
+        }
+        return self.view.convert(keyboardFrame, from: nil)
     }
     
 }
@@ -32,7 +93,24 @@ class BaseViewController: UIViewController {
 // MARK: - NavigationBarDesign
 fileprivate extension BaseViewController {
     func designingNavigationBar() {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: ""), style: .plain, target: self, action: #selector(popVC))
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        let showingNavigationBar = isShowingNavigationBar()
+        var backgroundColor = showingNavigationBar ? UIColor.white : UIColor.clear
+        if let color = navigationBarBackgroundColor() {
+            backgroundColor = color
+        }
+        self.navigationController?.navigationBar.backgroundColor = backgroundColor
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+       
+
     }
     
     
@@ -93,7 +171,7 @@ extension BaseViewController {
 
 // MARK: - Pop push present
 extension BaseViewController {
-    func popVC() {
+    @objc func popVC() {
         self.navigationController?.popViewController(animated: true)
     }
     

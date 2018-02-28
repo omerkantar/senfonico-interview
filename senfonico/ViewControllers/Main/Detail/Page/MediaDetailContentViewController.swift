@@ -16,7 +16,7 @@ class MediaDetailContentViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     
     var viewModel: MediaCellViewModel?
-    var imageData: Data?
+    var image: UIImage?
     var index: Int = 0
     var totalCount: Int = 0
     
@@ -57,15 +57,15 @@ class MediaDetailContentViewController: UIViewController {
         self.webView.isHidden = true
         self.imageView.isHidden = false
         self.imageView.image(url: url, placeholder: #imageLiteral(resourceName: "placeholder_mountain"), mode: UIViewContentMode.scaleAspectFit) { (data) in
-            self.imageData = data
+            self.image = UIImage(data: data)
         }
         
     }
     
     // MARK: - Actions
     @IBAction func shareButtonTapped() {
-        if let data = imageData {
-            showShareVC(items: [data])
+        if let image = image {
+            showShareVC(items: [image])
         } else  if let videoURL = viewModel?.videoURL {
             showShareVC(items: [videoURL.absoluteString])
 
@@ -75,7 +75,10 @@ class MediaDetailContentViewController: UIViewController {
     }
     
     func showShareVC(items: [Any]) {
-        
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityVC.modalPresentationStyle = .popover
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
     }
 
 }

@@ -58,10 +58,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-kd-q8J">
-                                                        <rect key="frame" x="107" y="92" width="81" height="36"/>
+                                                        <rect key="frame" x="107" y="92" width="63" height="36"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="8" maxY="2"/>
-                                                        <state key="normal" title="Videos">
+                                                        <state key="normal" title="Posts">
                                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -109,7 +109,7 @@
                             <constraint firstItem="BE4-ll-Rt1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EYX-eo-4Gv"/>
                             <constraint firstItem="BE4-ll-Rt1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kha-yZ-c0J"/>
                             <constraint firstItem="SJj-st-E8f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S7v-Tt-VSj"/>
-                            <constraint firstItem="SJj-st-E8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W4p-gx-Vl4"/>
+                            <constraint firstItem="SJj-st-E8f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="W4p-gx-Vl4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SJj-st-E8f" secondAttribute="bottom" id="aix-rV-1Ac"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SJj-st-E8f" secondAttribute="trailing" id="dpL-YI-W7R"/>
                             <constraint firstItem="BE4-ll-Rt1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sDR-gv-pRJ"/>
@@ -123,7 +123,7 @@
                         <outlet property="headerHeightConstraint" destination="uNE-2F-y2K" id="ebD-Lg-sbr"/>
                         <outlet property="headerView" destination="BE4-ll-Rt1" id="Iwi-nO-sPT"/>
                         <outlet property="photosButton" destination="8O9-yC-yEv" id="iPX-il-mev"/>
-                        <outlet property="videosButton" destination="bnH-kd-q8J" id="yCK-tP-qnw"/>
+                        <outlet property="postsButton" destination="bnH-kd-q8J" id="yCK-tP-qnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -178,6 +178,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="closeButton" destination="MZr-au-bfN" id="pio-ei-XAa"/>
                         <outlet property="containerView" destination="vXu-l3-LHF" id="CmZ-f2-M5h"/>
                     </connections>
                 </viewController>
@@ -201,7 +202,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4I-Ib-m3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="134"/>
+            <point key="canvasLocation" x="95" y="134"/>
         </scene>
     </scenes>
     <resources>

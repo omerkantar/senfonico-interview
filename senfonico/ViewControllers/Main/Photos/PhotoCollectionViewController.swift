@@ -152,9 +152,16 @@ extension PhotoCollectionViewController {
     }
     
     func loadedData(model: ResponseModel) {
-        self.viewModel.loadedData(responseModel: model)
-        self.collectionView.reloadData()
         self.refreshControl.endRefreshing()
+        self.viewModel.loadedData(responseModel: model)
+        var indexPaths = [IndexPath]()
+        let row = self.viewModel.cellVMs.count - 30
+        for vm in self.viewModel.newCellVMs {
+            let index = viewModel.newCellVMs.index(of: vm)!
+            indexPaths.append(IndexPath(row: row + index, section: 0))
+        }
+        self.collectionView.insertItems(at: indexPaths)
+        
     }
     
     @objc func refreshData() {

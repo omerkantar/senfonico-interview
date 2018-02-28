@@ -13,6 +13,7 @@ class MediasViewModel {
     var paginationManager: PaginationManager?
     var cellVMs = [MediaCellViewModel]()
     var lastPageModel: MediaPageModel?
+    var newCellVMs = [MediaCellViewModel]()
     
     var isFirst: Bool {
         return lastPageModel == nil
@@ -47,7 +48,8 @@ class MediasViewModel {
         self.lastPageModel = MediaPageModel(json: responseModel.json, type: type)
         if let list = self.lastPageModel?.medias {
             paginationManager?.allPhotos += list
-            let newCellVMs = list.map({ (model) -> MediaCellViewModel in
+            self.newCellVMs.removeAll()
+            self.newCellVMs = list.map({ (model) -> MediaCellViewModel in
                 return MediaCellViewModel(photo: model)
             })
             self.cellVMs += newCellVMs

@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 // MARK: - APITarget
 
 protocol APITarget {

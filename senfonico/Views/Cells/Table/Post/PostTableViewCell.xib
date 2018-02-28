@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="169" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="senfonico" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="168.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYf-hk-rHd">
+                        <rect key="frame" x="8" y="4" width="304" height="156.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqP-aq-Qtb">
+                                <rect key="frame" x="12" y="15" width="277" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvx-EA-hQL">
+                                <rect key="frame" x="12" y="47.5" width="277" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.98039215686274506" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fqP-aq-Qtb" firstAttribute="leading" secondItem="nYf-hk-rHd" secondAttribute="leading" constant="12" id="2TS-3g-hFK"/>
+                            <constraint firstAttribute="trailing" secondItem="fqP-aq-Qtb" secondAttribute="trailing" constant="15" id="BKu-jX-qn9"/>
+                            <constraint firstItem="Mvx-EA-hQL" firstAttribute="leading" secondItem="fqP-aq-Qtb" secondAttribute="leading" id="ERW-tr-Pjc"/>
+                            <constraint firstItem="fqP-aq-Qtb" firstAttribute="top" secondItem="nYf-hk-rHd" secondAttribute="top" constant="15" id="bch-pq-pAZ"/>
+                            <constraint firstItem="Mvx-EA-hQL" firstAttribute="trailing" secondItem="fqP-aq-Qtb" secondAttribute="trailing" id="bhW-dR-dYc"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mvx-EA-hQL" secondAttribute="bottom" constant="15" id="h2z-Rj-uuY"/>
+                            <constraint firstItem="Mvx-EA-hQL" firstAttribute="top" secondItem="fqP-aq-Qtb" secondAttribute="bottom" constant="2" id="ioM-aI-nJj"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPm-R1-Bgd">
+                        <rect key="frame" x="0.0" y="167.5" width="320" height="0.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="WUk-EY-YEH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nYf-hk-rHd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Lu6-HQ-yWz"/>
+                    <constraint firstAttribute="bottom" secondItem="MPm-R1-Bgd" secondAttribute="bottom" id="OA5-ue-8cJ"/>
+                    <constraint firstItem="nYf-hk-rHd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="YJD-8l-wYw"/>
+                    <constraint firstAttribute="bottom" secondItem="nYf-hk-rHd" secondAttribute="bottom" constant="8" id="jE2-p5-nHD"/>
+                    <constraint firstItem="MPm-R1-Bgd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="t5V-Bn-h2c"/>
+                    <constraint firstAttribute="trailing" secondItem="MPm-R1-Bgd" secondAttribute="trailing" id="yeK-CH-wqd"/>
+                    <constraint firstAttribute="trailing" secondItem="nYf-hk-rHd" secondAttribute="trailing" constant="8" id="yzE-Ju-3ym"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bodyLabel" destination="Mvx-EA-hQL" id="eRl-6f-23c"/>
+                <outlet property="containerView" destination="nYf-hk-rHd" id="Iu0-pJ-mJ8"/>
+                <outlet property="titleLabel" destination="fqP-aq-Qtb" id="qF7-vK-DdQ"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="136.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -14,6 +14,7 @@ class MainViewModel {
     var pageController: PageViewController?
     var photoCollectionVC: PhotoCollectionViewController?
     var videoTableVC: VideoTableViewController?
+    var postTableVC: PostTableViewController?
     
     init() {
         self.setup()
@@ -23,6 +24,7 @@ class MainViewModel {
         pageController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         photoCollectionVC = PhotoCollectionViewController()
         videoTableVC = VideoTableViewController()
-        pageController?.tabViewControllers = [photoCollectionVC!, videoTableVC!]
+        postTableVC = PostTableViewController()
+        pageController?.tabViewControllers = [photoCollectionVC!, postTableVC!]
     }
 }
