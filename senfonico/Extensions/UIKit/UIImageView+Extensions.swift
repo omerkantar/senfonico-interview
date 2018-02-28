@@ -20,7 +20,6 @@ extension UIImageView {
         self.image = placeholder
         self.contentMode = .center
         
-        
         URLSession.shared.dataTask(with: url as URL, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
@@ -37,6 +36,7 @@ extension UIImageView {
                 
                 self.contentMode = mode ?? UIViewContentMode.scaleAspectFill
                 let image = UIImage(data: data!)
+                self.image = nil
                 self.image = image
             })
             

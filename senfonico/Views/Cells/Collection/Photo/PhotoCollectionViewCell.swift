@@ -39,6 +39,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         guard let vm = viewModel as? MediaCellViewModel else {
             return
         }
+        imageView.image = nil
         imageView.image(url: vm.imageURL, placeholder: #imageLiteral(resourceName: "placeholder_mountain"))
     }
 
